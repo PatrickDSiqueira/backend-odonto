@@ -12,6 +12,7 @@ module.exports = {
             updatedAt: new Date(),
             ra: null,
             photoProfile: null,
+            password: "12345678",
             userTypeId: 1,
             lastAccess: new Date()
         }, {
@@ -21,6 +22,7 @@ module.exports = {
             createdAt: new Date(),
             updatedAt: new Date(),
             ra: null,
+            password: "12345678",
             photoProfile: null,
             userTypeId: 2,
             lastAccess: new Date()
@@ -31,6 +33,7 @@ module.exports = {
             createdAt: new Date(),
             updatedAt: new Date(),
             ra: null,
+            password: "12345678",
             photoProfile: null,
             userTypeId: 2,
             lastAccess: new Date()
