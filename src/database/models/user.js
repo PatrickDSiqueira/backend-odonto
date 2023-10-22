@@ -25,6 +25,7 @@ module.exports = (sequelize, DataTypes) => {
         ra: DataTypes.STRING,
         photoProfile: DataTypes.STRING,
         userTypeId: DataTypes.INTEGER,
+        lastAccess:DataTypes.DATE
     }, {
         sequelize,
         modelName: 'User',
