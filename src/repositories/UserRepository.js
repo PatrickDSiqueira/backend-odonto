@@ -26,6 +26,14 @@ class UserRepository {
             lastAccess: new Date()
         });
     }
+
+    async getUserByEmail(email) {
+        return await User.findOne({
+            where:  {
+                email: email 
+            }
+        })
+    }
 }
 
 module.exports = new UserRepository();
