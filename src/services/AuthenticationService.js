@@ -29,8 +29,21 @@ class AuthenticationService {
             return {
                 status: 400,
                 data: 'Senha inválida.'
-            } 
+            }
         }
+
+        return {
+            status: 200,
+            data: this.generateTokenJWTbyUser(user)
+        }
+    }
+
+    /**
+     *
+     * @param user
+     * @returns {*}
+     */
+    generateTokenJWTbyUser(user) {
 
         const payload = {
             id: user.id,
@@ -40,12 +53,7 @@ class AuthenticationService {
             ra: user.ra
         }
 
-        const token = jwt.sign(payload, secret, {expiresIn})
-
-        return {
-            status: 200,
-            data: token
-        }
+        return jwt.sign(payload, secret, {expiresIn});
     }
 }
 
