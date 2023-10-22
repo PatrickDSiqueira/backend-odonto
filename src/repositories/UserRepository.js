@@ -9,10 +9,11 @@ class UserRepository {
      * @param email
      * @param ra
      * @param photoProfile
+     * @param password
      * @returns {Promise<Model<any, TModelAttributes>>}
      */
 
-    async saveNewDefaultUser(firstName, lastName, email, ra, photoProfile) {
+    async saveNewDefaultUser(firstName, lastName, email, ra, photoProfile, password) {
 
         return await User.create({
             firstName,
@@ -20,6 +21,7 @@ class UserRepository {
             email,
             ra,
             photoProfile,
+            password,
             userTypeId: 1,
             lastAccess: new Date()
         });

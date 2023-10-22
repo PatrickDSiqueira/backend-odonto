@@ -6,9 +6,9 @@ class UserController {
 
         try {
 
-            const {first_name, last_name, email, ra, photo_profile} = req.body;
+            const {first_name, last_name, email, ra, photo_profile, password, confirm_password} = req.body;
 
-            const result = await UserService.registerDefaultUser(first_name, last_name, email, ra, photo_profile);
+            const result = await UserService.registerDefaultUser(first_name, last_name, email, password, confirm_password, ra, photo_profile);
             return res.status(result.status).json(result.data)
 
         } catch (e) {

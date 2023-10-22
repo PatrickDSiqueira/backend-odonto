@@ -4,9 +4,9 @@ class UserService {
     /**
      * Função para criar um usuário comum.
      */
-    async registerDefaultUser(firstName, lastName, email, ra = null, photoProfile = null) {
+    async registerDefaultUser(firstName, lastName, email, password, confirmPassword, ra = null, photoProfile = null) {
 
-        if (!firstName || !lastName || !email) {
+        if (!firstName || !lastName || !email || !password || !confirmPassword) {
 
             return {
                 status: 400,
@@ -14,7 +14,15 @@ class UserService {
             }
         }
 
-        const user = await UserRepository.saveNewDefaultUser(firstName, lastName, email, ra, photoProfile);
+        if(password !== confirmPassword){
+
+            return {
+                status: 400,
+                data: 'A senha e a confimação não correspondem'
+            }
+        }
+
+        const user = await UserRepository.saveNewDefaultUser(firstName, lastName, email, ra, photoProfile, password);
 
         return {
             status: 200,
