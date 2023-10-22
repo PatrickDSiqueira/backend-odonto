@@ -1,3 +1,5 @@
+console.clear();
+
 const express = require('express');
 const consign = require('consign');
 
