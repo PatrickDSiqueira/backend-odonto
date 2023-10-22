@@ -4,12 +4,7 @@ class MenusRepository {
 
     async getAll() {
 
-        const allMenus = await Menus.findAll();
-
-        return {
-            status: 202,
-            data: allMenus
-        }
+        return await Menus.findAll();
     }
 }
 

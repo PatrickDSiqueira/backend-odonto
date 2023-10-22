@@ -4,7 +4,24 @@ class MenusService {
 
     async getAllMenus() {
 
-        return MenusRepository.getAll();
+        const menuList = await MenusRepository.getAll();
+        console.log(typeof menuList)
+
+        let data = [];
+
+        for (const menuListElement of menuList) {
+
+            data.push({
+                id : menuListElement.id,
+                title : menuListElement.title,
+                icon: menuListElement.iconUrl
+            })
+        }
+
+        return {
+            status: 202,
+            data
+        };
     }
 }
 

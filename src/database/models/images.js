@@ -15,10 +15,14 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     Images.init({
-        url: DataTypes.STRING
+        url: DataTypes.STRING,
+        title: DataTypes.STRING,
+        description: DataTypes.STRING,
     }, {
         sequelize,
         modelName: 'Images',
+        timestamps: true,
+        underscored: true
     });
     return Images;
 };
