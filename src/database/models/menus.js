@@ -15,12 +15,13 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'fatherId',
         as: 'menuFather'
       });
-    }
+    }te
   }
   Menus.init({
     title: DataTypes.STRING,
     description: DataTypes.STRING,
     iconUrl: DataTypes.STRING,
+    fatherId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Menus',

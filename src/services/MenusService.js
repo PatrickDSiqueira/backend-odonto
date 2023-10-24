@@ -4,19 +4,7 @@ class MenusService {
 
     async getAllMenus() {
 
-        const menuList = await MenusRepository.getAll();
-        console.log(typeof menuList)
-
-        let data = [];
-
-        for (const menuListElement of menuList) {
-
-            data.push({
-                id : menuListElement.id,
-                title : menuListElement.title,
-                icon: menuListElement.iconUrl
-            })
-        }
+        const data = await MenusRepository.getFatherWithChild();
 
         return {
             status: 202,

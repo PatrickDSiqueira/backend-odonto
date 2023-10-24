@@ -11,7 +11,7 @@ class MenusController {
 
         } catch (e) {
 
-            console.log(e.message);
+            console.log(e);
 
             return res.status(500).json({
                 error: 'Internal error',
